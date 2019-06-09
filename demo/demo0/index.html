@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="eyeview">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="renderer" content="webkit"/>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link href="www/css/bootstrap.css" rel="stylesheet">
+	<link href="works/css/shi.css" rel="stylesheet">
+	<link href="navbar/css/navbar.css" rel="stylesheet">
+
+	<script src="www/js/jquery.js"></script>
+	<script src="www/js/angular.js"></script>
+	<script src="www/js/bootstrap.min.js"></script>
+	<script src="www/js/angular-resource.js"></script>	
+	<script src="navbar/app.js"></script>
+	<script src="navbar/js/navbar.directive.js"></script>
+	<script src="works/bow/angular-route.js"></script>
+	<script src="works/app.js"></script>
+	<script src="works/js/controller.js"></script>
+	<script src="works/js/Service.js"></script>
+    <script src="navbar/bow/angular-ui-router.js"></script>
+
+	<title>视觉me</title>
+</head>
+<body class="index" ng-controller="indexCtrl">
+	<header ng-if="top">	
+		<div class="header">
+			<div class="">
+				<div class="top-logo glyphicon glyphicon-eye-close"><a href=""></a></div>
+				<div class="login">
+					<span class="glyphicon glyphicon-log-in login-icon"></span>
+					<a href="shilog.htm">登录</a>
+				</div>
+				<div class="regis">
+					<span class="glyphicon glyphicon-registration-mark login-icon"></span>
+					<a href="#">注册</a>
+				</div>
+			</div>
+			<div class="search">
+				<div class="logo">视觉me</div>
+				<div class="search-box">
+					<input type="text" class="input-search" placeholder="从43556个灵感里发现" />
+					<button class="btn_search">搜索</button>
+				</div>
+			</div>
+			<div class="sign"><a href="#">闹元宵@丸子2015</a></div>
+
+		</div>
+		<div class="row row-1">
+			<div class="col-md-4">
+				<div class="row-icon"></div>
+				<h4 class="text-center">
+						分享作品
+				</h4>
+				<p class="text-center">炫出你最好的作品,汝独乐乐不如众乐乐</p>
+			</div>
+			<div class="col-md-4">
+				<div class="row-icon"></div>
+				<h4 class="text-center">
+						发现佳作
+				</h4>
+				<p class="text-center">发现你最爱的作品，提升自己的创作能力</p>
+			</div>
+			<div class="col-md-4">
+				<div class="row-icon"><img src=""></div>
+				<h4 class="text-center">
+						设计大赛
+				</h4>
+				<p class="text-center">参与精选设计大赛，与同行竞技和学习<p>
+			</div>
+		</div>
+		<div class="long-line"></div>
+		<div class="row">
+			<h3 class="text-center">与众不同的社区</h3>
+			<p class="text-center" style="letter-spacing:4px">让我们因设计成为朋友</p>
+		</div>
+	</header>
+	<!--详情页的导航栏-->
+	<div navbar ng-hide="top"></div>
+	<!---->
+	<div class="container">
+		<div class="row-image">
+			<div ng-view></div>
+		</div>
+	</div>
+	<div class="line" ng-if="top"><span class="glyphicon glyphicon-eye-close"></span></div>
+	<div class="footer" ng-if="top">
+		<div class="foot-regis"><a href="#">现在注册</a></div>
+		<div class="foot-more"><a href="#">更多作品</a></div>
+	</div>
+	<script>
+		(function (window){
+			window.onscoll=function(){
+				var scollTop=docunment.body.scollTop||document.element.scollTop;
+				var topWrapper=document.getElementById('top-wrapper');
+				if (scollTop>50){
+					addClass(topWrapper,active);
+				}
+				else
+					removeClass(topWrapper,active);
+			}
+		})(window)
+	</script>
+</body>
+</html>

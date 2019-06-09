@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>    
+    <title>腾楚医疗</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link href="style.css" rel="stylesheet">
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			<!--默认日期表隐藏--->
+			$(".table-date").hide();
+			<!--更多日期点击后，变换文本及图标，隐藏水平线效果--->
+			$("#more").click(function(){
+				$(".table-date").toggle("slow");
+				$("#row2").toggleClass("row-2");
+				if($("#icon3").hasClass("glyphicon-chevron-down"))
+					$("#icon3").attr("class","glyphicon glyphicon-chevron-up");
+				else
+					$("#icon3").attr("class","glyphicon glyphicon-chevron-down");
+				$(this).text(this.text=='更多日期'?'收起日期':'更多日期');
+			});
+			<!--日期表第二行悬浮显示效果--->
+			$(".col-md-1").hover(function(){
+				$(this).children().eq(1).css("visibility","visible");},function(){
+				$(this).children().eq(1).css("visibility","hidden");
+			});
+			
+		});	
+			
+	</script>
+</head>
+<body>
+	<div class="container">
+		<header>
+		   <!----顶部信息------>
+			<div class="row">
+				<div class="col-md-4"><a class="icon1" href="#"><span class="glyphicon glyphicon-arrow-left"></span></a></div>
+				<div class="col-md-4 text-center">医生详情</div>
+				<div class="col-md-4 "><a class="icon2" href="#"><span class="glyphicon glyphicon-align-justify"></span><a href="#"></a></div>
+			</div>
+			<div class="row">
+				<div class="col-md-2 text-center">
+					<img class="img-circle" alt="头像" width="70" height="70" src="images/1.jpg"/>
+				</div>
+				<div class="col-md-4">
+					<div class="info">陈素娟<br/>住院医师<br/><span class="grey-text">神经内科</span></div>
+				</div>
+				<div class="col-md-4">
+					<span class="glyphicon glyphicon-heart heart"></span>
+				</div>
+				<div class="col-md-2 text-center">
+					<img alt="二维码" class="img-er" src="images/er.png"/>
+				</div>
+			</div>
+				<!----菜单------>
+				<nav class="text-center">
+					<ul id="tab">
+						<li id="order" onclick="change(this)">预约时段</li>
+						<li id="intro" onclick="change(this)">介绍</li>
+					</ul>
+				</nav>
+				<!----tab选项卡切换js------>
+				<script>
+					function change(obj){
+						var tabs=document.getElementById("tab").getElementsByTagName("li");
+						var tab_wraps=document.getElementById("tag").getElementsByTagName("article");
+						for(var i=0;i<tabs.length;i++){
+							if(tabs[i]==obj){
+								tab_wraps[i].style.display="block";
+								tabs[i].className="select";
+							
+							}
+							else{
+								tab_wraps[i].style.display="none";
+								tabs[i].className="";
+							}
+						}
+					}
+				</script>
+		</header>
+		<div id="tag">
+			<!----tab选项卡第一部分------>
+			<article>
+				<div class="row">
+					<div id="today" class="col-md-4 text-center pull-left"></div>
+					<script>
+						var dayNames = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六"); 
+						document.getElementById("today").innerHTML=(new Date().getFullYear()+"-"+(new Date().getMonth()+1)+"-"+new Date().getDate()+" "+dayNames[new Date().getDay()]); 
+					</script>
+					<div  class="col-md-4 text-center pull-right"><span id="icon3" class="glyphicon glyphicon-chevron-down"></span><a href="#" id="more">更多日期</a></div>
+				</div>
+				<div id="row2">
+					<div class="table-date">
+						<div class="col-md-1"><p id="tb-1">三</p><p class="tr-3">3月</p><p id="td-1">17</p></div>
+						<div class="col-md-1"><p id="tb-2">三</p><p class="tr-3">3月</p><p id="td-2">17</p></div>
+						<div class="col-md-1"><p id="tb-3">三</p><p class="tr-3">3月</p><p id="td-3">17</p></div>
+						<div class="col-md-1"><p id="tb-4">三</p><p class="tr-3">3月</p><p id="td-4">17</p></div>
+						<div class="col-md-1"><p id="tb-5">三</p><p class="tr-3">3月</p><p id="td-5">17</p></div>
+						<div class="col-md-1"><p id="tb-6">三</p><p class="tr-3">3月</p><p id="td-6">17</p></div>
+						<div class="col-md-1"><p id="tb-7">三</p><p class="tr-3">3月</p><p id="td-7">17</p></div>
+					</div>
+					<!----日期表获取显示js------>
+					<script>
+						var a=new Date(); 
+						var dayNames = new Array("日","一","二","三","四","五","六"); 
+						var i=1;
+						var b=a.getDay();
+						var c=a.getDate();
+						while(i<8){
+						  document.getElementById("tb-"+i).innerHTML=dayNames[b];
+						  document.getElementById("td-"+i).innerHTML=c;
+						  i++;b++;c++;
+						  if(b>6)
+							b=0;
+						}
+						
+					</script>
+	
+				</div>
+				<div class="row">
+					<div class="col-1">可挂号</div>
+					<div class="col-2 text-center">15：30-17：00</div>
+					<div class="col-3 text-center"><a>已挂0，剩余19</a></div>
+					<div class="col-4 glyphicon glyphicon-chevron-right"></div>
+				</div>
+			</article>
+			<!----tab选项卡第二部分------>
+			<article class="tab-wrap">
+				<div class="row detail">
+					<p>医生介绍:陈素娟 主任医师</p> 
+					<p>专长:Edgewise矫正技术、Tip—Edge矫治技术、MBT矫治技术、活动矫治技术、功能性矫治技术</p>
+				</div>
+			</article>
+		</div>
+		
+			
+	</div>
+</body>
+</html>

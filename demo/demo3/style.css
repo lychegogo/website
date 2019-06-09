@@ -1,0 +1,256 @@
+body{
+	margin:0;
+	background-color:rgba(0,0,0,0.1);	
+	width:100%;
+	font-family: "Microsoft YaHei" 
+}
+a{
+	color:black;
+	text-decoration:none;
+}
+a:hover{
+	cursor:pointer;
+}
+/*-----圆形图片css---*/
+.img-circle{
+	margin-top:13px;
+	-webkit-border-radius:50px;
+	-moz-border-radius:50px;
+	-o-border-radius:50px;
+	border-radius:50px;
+}
+/*-----灰色字体css---*/
+.grey-text{
+	color:#444;
+}
+.text-center{
+	text-align:center;
+}
+.row{
+	width:100%;
+	line-height:40px;
+	display:inline-block;
+}
+/*--------------*/
+/*---列布局---*/
+/*--------------*/
+.col-md-1,.col-md-2,.col-md-4{
+	float: left;
+}
+.col-md-1{
+	width:14.28%;
+}
+.col-md-2{
+	width:16.66%;
+}
+.col-md-4{
+	width:33.3%;
+}
+.info{
+	margin-left:84px;
+	line-height:33px;
+	vertical-align:middle;
+}
+.pull-left{
+	float:left;
+}
+.pull-right{
+	float:right;
+}
+.container{
+	width:100%;
+}
+header,article{
+	width:100%;
+	background-color:white;
+}
+article{
+	margin-top:10px;
+	width:100%;
+	background-color:white;
+	height:auto;
+}
+/*--------------*/
+/*---菜单---*/
+/*--------------*/
+nav ul{
+	padding-left:0px;
+	padding-bottom: 0px;
+	border-bottom:1px solid #ccc;
+}
+
+nav ul li{
+	margin:0;
+	width:49%;
+	list-style-type:none;
+	vertical-align:middle;
+	display: inline-block;
+	font-size:16px;
+	padding-bottom: 5px;
+	border-bottom:3px solid transparent;
+	-webkit-transition:border 0.3s ease-in-out;
+	-moz-transition:border 0.3s ease-in-out;
+	
+	transition:border 0.3s ease-in-out;
+}
+nav ul li:hover{
+	color:#3CB371;
+	border-bottom:3px solid #3CB371;
+	cursor:pointer;
+}
+.select{
+	color:#3CB371;
+	border-bottom:3px solid #3CB371;
+}
+.heart{
+	color:#ccc;
+	font-size:2.5em;
+	margin-top:20px;
+	margin-left:56%;
+	cursor:pointer;
+}
+.img-er{
+	width:100px;
+	height:100px;
+	padding:10px;
+	border:1px solid #3CB371;
+}
+.tab-wrap{
+	display:none;
+}
+
+#tag article .row,.row-2{
+	border-top:1px solid #ccc;
+}
+.date:hover{
+	color:#3CB371;
+}
+.table-date{
+	width:100%;
+	text-align:center;
+}
+.table-date p{
+	line-height:30px;
+	margin:5px auto;
+}
+.col-md-1:hover{
+	color:#3CB371;
+	border-bottom:3 solid #3CB371;
+}
+.tr-3{
+	visibility:hidden;
+	font-size:12px;
+}
+
+/*--------------*/
+/*---bootstrap字体图标---*/
+/*--------------*/
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('fonts/glyphicons-halflings-regular.eot');
+  src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+.glyphicon {
+  position: relative;
+  top: 5px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-heart:before {
+  content: "\e005";
+}
+.glyphicon-align-justify:before {
+  content: "\e055";
+}
+.glyphicon-arrow-left:before {
+  content: "\e091";
+}
+.glyphicon-chevron-right:before {
+  content: "\e080";
+}
+.glyphicon-chevron-up:before {
+  content: "\e113";
+}
+.glyphicon-chevron-down:before {
+  content: "\e114";
+}
+/*--------------*/
+/*---回退、菜单、更多日期图标css---*/
+/*--------------*/
+.icon1,.icon2{
+	color:#666;
+}
+.icon1:hover,.icon2:hover,.heart:hover,#icon3+a{
+	color:#3CB371;
+}
+.icon1{
+	margin-left:4%;
+}
+.icon2{
+	margin-left:94%;	
+}
+#icon3{
+	color:white;
+	background-color:#3CB371;
+	font-size:0.8em;
+	height:20px;
+	width:20px;
+	line-height:20px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+    -o-border-radius:10px;
+	border-radius:10px;
+	top:0;
+}
+/*----更多日期id----*/
+#more{
+	margin-left:5px;
+}
+/*--------------*/
+/*---挂号情况列布局---*/
+/*--------------*/
+.col-1,.col-2,.col-3,.col-4{
+	display:inline-block;
+	margin-top:20px;
+	margin-bottom:15px;
+}
+.col-1{
+	height:50px;
+	width:50px;
+	line-height:50px;
+	margin-left:3%;
+	color:#3CB371;
+	border:1px solid #3CB371;
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	border-radius:25px;
+	
+}
+.col-2{
+	width:34%;
+}
+.col-3{
+	width:120px;
+	height:25px;
+	line-height:25px;
+	background-color:#3CB371;
+	margin-left:38%;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	
+	border-radius:3px;
+}
+.col-4{
+	color:#ccc;
+}
+/*----介绍选项卡内容css----*/
+.detail{
+	padding-left:20%;
+	letter-spacing:3px;
+}

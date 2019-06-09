@@ -1,0 +1,48 @@
+<!Doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/shi.css" type="text.css" media="all"/>
+    <title>登录页</title>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#href-regis").click(function(){
+               $("#login").load("shires.html #regis");
+            });
+        });
+    </script>
+</head>
+<body class="log" >
+
+    <div class="top">
+        <a href="shi.htm"><img src="images/logo.ico" alt="logo"></a>
+    </div>
+    <article id="login">
+        <div class="login-bar text-center">
+            <h2 class="bord-word">登录视觉ME设计社区</h2>
+            <button type="button" class="btn btn-weibo">使用微博账户登录</button>
+            <div class="line"><div class="line-word">或</div></div>
+        </div>
+        <div class="login-form text-center">
+            <h4 class="grey-word">500px.me的用户无需注册，可直接登录</h4>
+            <div>
+                <input type="text" class="log-text mid-word" placeholder="手机号码或电子邮件" />
+            </div>
+            <div><input type="text" class="log-text mid-word" placeholder="密码" /></div>
+            <button type="button" class="btn btn-log">登录</button>
+            <p class="blue-word log-forget">忘记密码？</p>
+        </div>
+        <p class="text-center">
+            还不是会员？
+            <a href="shires.html" id="href-regis"><span class="blue-word">注册</span></a>
+        </p>
+    </article>
+
+</body>
+</html>

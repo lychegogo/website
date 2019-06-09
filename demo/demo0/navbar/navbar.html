@@ -1,0 +1,43 @@
+<header class="navbar-static" ng-app="navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/bsa_ips" class="navbar-brand">
+                <img src="works/images/logo.ico" alt="Logo" />
+                <span ng-bind="appName"></span>
+            </a>
+        </div>
+        <nav id="bs-navbar" class="collapse navbar-collapse">
+            <div>
+                <ul class="nav navbar-nav">
+                    <!-- class="dropdown" -->
+                    <li class="dropdown-container">
+                        <a ui-sref="index" class="dropdown-toggle active">首页</a>
+                    </li>
+                    <li class="dropdown-container dropdown open">
+                        <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle">原创 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a ui-sref="login">新锐100计划</a></li>
+                            <li><a ui-sref="login">毕业展</a></li>
+                            <li><a ui-sref="login">排行榜</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-container" header-menu-dropdown>
+                        <a href="javascript:;" class="dropdown-toggle">灵感<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a ui-sref="registion">专辑</a></li>
+                            <li><a ui-sref="registion">在线展览</a></li>
+                            <li><a ui-sref="registion">大师</a></li>
+                            <li><a ui-sref="registion">影像影响</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li><a ui-sref="login" title="登录"><i class="fa fa-home"></i>登录</a></li>
+                <li><a ui-sref="registion" title="注册"><i class="fa fa-info-circle"></i>注册</a></li>
+                <li><a href="javascript:;" ng-click="showAbout()" title="退出"><i class="fa fa-info-circle"></i>退出</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
