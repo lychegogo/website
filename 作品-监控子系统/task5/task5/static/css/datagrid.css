@@ -1,0 +1,34 @@
+.datagrid-tool {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+}
+.datagrid-tool .datagrid-input{
+    width: 35px;
+    padding: 5px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border: 1px solid #DDD;
+}
+.datagrid-tool select.datagrid-input{
+    width: 50px;
+    padding: 5px 1px;
+}
+.datagrid-tool .datagrid-go {
+    position: relative;
+    /*margin-left: -1px;*/
+    color: #333;
+    text-decoration: none;
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    padding: 5px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.datagrid-tool .datagrid-go:focus, .datagrid-tool .datagrid-go:hover {
+    z-index: 2;
+    color: #23527C;
+    background-color: #EEE;
+    border-color: #DDD;
+}

@@ -1,0 +1,59 @@
+<div ng-init="init()">
+    <div class="row">
+        <div class="chart-title">
+            <span>磁盘使用情况</span>
+            <span style="margin-top:5px;margin-left:70%">
+                <span style="font-weight:bold;font-size:14px">自动刷新:</span>
+                <input type="checkbox" id="checkbox_refresh" class="chk_3" ng-click="auto_refresh()"  ng-disabled="" checked />
+                <label for="checkbox_refresh" style="top:10px"></label>
+            </span>
+        </div>
+        <div id="disk_chart" style="height:300px;">
+
+        </div>
+        <div class="chart-title">磁盘占用Top5</div>
+        <table class="table table-bordered table-condensed table-hover table-striped">
+            <thead>
+                <tr>
+                    <th style="min-width: 60px;">进程名</th>
+                    <th style="min-width: 60px;">PID</th>
+                    <th style="min-width: 85px;">读（字节/秒）</th>
+                    <th style="min-width: 85px;">写（字节/秒）</th>
+                    <th style="min-width: 130px;">总数（字节/秒）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in top5_List">
+                    <td>[[ item.name ]]</td>
+                    <td>[[ item.pid ]]</td>
+                    <td>[[ item.read_bytes ]]</td>
+                    <td>[[ item.write_bytes ]]</td>
+                    <td>[[ item.total_bytes ]]</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="chart-title">磁盘占用进程信息</div>
+        <datagrid conf="gridData">
+            <table class="table table-bordered table-condensed table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th style="min-width: 60px;">进程名</th>
+                        <th style="min-width: 60px;">PID</th>
+                        <th style="min-width: 85px;">读（字节/秒）</th>
+                        <th style="min-width: 85px;">写（字节/秒）</th>
+                        <th style="min-width: 130px;">总数（字节/秒）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in gridData.list">
+                        <td>[[ item.name ]]</td>
+                        <td>[[ item.pid ]]</td>
+                        <td>[[ item.read_bytes ]]</td>
+                        <td>[[ item.write_bytes ]]</td>
+                        <td>[[ item.total_bytes ]]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </datagrid>
+    </div>
+</div>
